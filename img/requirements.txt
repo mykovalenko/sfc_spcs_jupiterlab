@@ -1,0 +1,16 @@
+cachetools
+pyarrow
+pandas
+numpy
+scipy
+matplotlib
+seaborn
+modin
+jupyter
+snowflake
+snowflake-connector-python
+snowflake-snowpark-python
+snowflake-ml-python
+JPype1
+pyNetLogo
+SALib
