@@ -44,7 +44,6 @@ mkdir -p "${BASEDIR}/cfg"
 cp -rf ./etc/* "${BASEDIR}"
 cp -rf ./img "${BASEDIR}"
 cp -rf ./dbs "${BASEDIR}"
-cp -rf ./app "${BASEDIR}"
 
 cd ${BASEDIR}
 

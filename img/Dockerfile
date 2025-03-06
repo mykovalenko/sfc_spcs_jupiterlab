@@ -1,5 +1,9 @@
 FROM python:3.11
 
+WORKDIR /opt/spcs
+COPY ./main.sh /opt/spcs/
+COPY ./requirements.txt /opt/spcs/cfg/
+
 RUN apt-get update -y
 RUN apt-get install python3-pip -y
 RUN pip3 install --upgrade pip
@@ -9,7 +13,7 @@ RUN pip3 install https://github.com/wbond/oscrypto/archive/d5f3437ed24257895ae1e
 
 RUN useradd -ms /bin/bash jupyter   
 USER jupyter
-WORKDIR /home/jupyter 
 
-ENTRYPOINT ["jupyter", "notebook", "--allow-root", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--NotebookApp.token=''", "--NotebookApp.password=''"] 
+RUN chmod 744 /opt/spcs/main.sh
+ENTRYPOINT [ "/opt/spcs/main.sh" ]
 EXPOSE 8888
