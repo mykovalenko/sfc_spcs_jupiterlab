@@ -11,9 +11,9 @@ RUN pip3 install --no-cache-dir --upgrade -r ./cfg/requirements.txt
 RUN pip3 uninstall oscrypto -y
 RUN pip3 install https://github.com/wbond/oscrypto/archive/d5f3437ed24257895ae1edd9e503cfb352e635a8.zip
 
+RUN chmod 744 /opt/spcs/main.sh
 RUN useradd -ms /bin/bash jupyter   
 USER jupyter
 
-RUN chmod 744 /opt/spcs/main.sh
 ENTRYPOINT [ "/opt/spcs/main.sh" ]
 EXPOSE 8888
